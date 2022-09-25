@@ -1,0 +1,58 @@
+{
+  "name": "cart53/ccavenue",
+  "type": "library",
+  "description": "Laravel Package for Integration of Latest CCAvenue Payment Gateway for PHP 7+",
+  "keywords": [
+    "Laravel",
+    "CCAvenue Payment gateway",
+    "PHP 7 Integration Kit",
+    "Cart53 Solutions"
+  ],
+  "homepage": "https://cart53.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Prashant Rijal",
+      "email": "prashant@cart53.com",
+      "homepage": "https://cart53.com",
+      "role": "Sr. Developer"
+    }
+  ],
+  "require": {
+    "illuminate/support": "*",
+    "php": ">=8.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "squizlabs/php_codesniffer": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cart53\\Payment\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Cart53\\Payment\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+    "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    },
+    "laravel": {
+      "providers": [
+        "Cart53\\Payment\\PaymentServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev"
+}
